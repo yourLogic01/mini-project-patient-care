@@ -33,7 +33,7 @@ class PatientController extends Controller
     {
         $data = $request->validated();
         Patient::create($data);
-        return redirect()->route('patients.index')->with('success', 'Pasien berhasil ditambahkan');
+        return redirect()->route('patients.index')->with('success', 'Data Pasien berhasil ditambahkan');
     }
 
     /**
@@ -59,7 +59,7 @@ class PatientController extends Controller
     {
         $data = $request->validated();
         $patient->update($data);
-        return redirect()->route('patients.index')->with('success', 'Pasien berhasil diperbarui');
+        return redirect()->route('patients.index')->with('success', 'Data Pasien berhasil diperbarui');
     }
 
     /**

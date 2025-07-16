@@ -18,5 +18,5 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::resource('patients', PatientController::class);
+Route::resource('patients', PatientController::class)->except('show');
 

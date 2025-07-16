@@ -10,5 +10,8 @@ class Patient extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
-    protected $dates = ['birth_date'];
+    protected $casts = [
+        'birth_date' => 'date',
+    ];
+
 }
