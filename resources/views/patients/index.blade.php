@@ -14,8 +14,9 @@
             <a href="{{ route('patients.create') }}" class="btn btn-primary">Tambah Pasien</a>
 
             <form action="{{ route('patients.index') }}" method="GET" class="d-flex">
-                <input type="text" name="search" class="form-control me-2" placeholder="Cari pasien...">
-                <button class="btn btn-outline-secondary">Cari</button>
+                <input type="text" name="search" class="form-control me-2" value="{{ request('search') }}"
+                    placeholder="Cari pasien...">
+                <button class="btn btn-outline-success">Cari</button>
             </form>
         </div>
 
