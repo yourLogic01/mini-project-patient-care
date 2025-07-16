@@ -67,25 +67,25 @@ Aplikasi dapat diakses melalui: `http://localhost:8000`
 
 ## 🗂️ Struktur Folder Custom
 
-Project mengikuti struktur default Laravel. Perubahan khusus:
+Project mengikuti struktur default Laravel.
 
-#### Folder views
+Perubahan di Struktur `resources/views`:
 
-📦views
-┣ 📂histories // folder page histori daftar kunjungan
-┃ ┣ 📜index.blade.php
-┃ ┗ 📜show.blade.php
-┣ 📂layouts // template utama
-┃ ┗ 📜main.blade.php
-┣ 📂partials // code utama untuk navigasi bar
-┃ ┗ 📜navbar.blade.php
-┣ 📂patients // folder page untuk fitur CRUD Pasien
-┃ ┣ 📜create.blade.php
-┃ ┣ 📜edit.blade.php
-┃ ┗ 📜index.blade.php
-┣ 📂visits // folder age pendaftaran kunjungan pasien
-┃ ┗ 📜create.blade.php
-┗ 📜home.blade.php
+-   📂 `views`
+    -   📂 `histories` — page histori daftar kunjungan
+        -   `index.blade.php`
+        -   `show.blade.php`
+    -   📂 `layouts` — template utama
+        -   `main.blade.php`
+    -   📂 `partials` — navigasi
+        -   `navbar.blade.php`
+    -   📂 `patients` — CRUD pasien
+        -   `index.blade.php`
+        -   `create.blade.php`
+        -   `edit.blade.php`
+    -   📂 `visits` — page pendaftaran kunjungan pasien
+        -   `create.blade.php`
+    -   `home.blade.php`
 
 ---
 
@@ -94,6 +94,7 @@ Project mengikuti struktur default Laravel. Perubahan khusus:
 ### 📋 CRUD Data Pasien
 
 -   Tambah, edit, hapus, dan lihat daftar pasien
+-   Search nama dan nik feature
 -   Validasi menggunakan Laravel Form Request
 
 ### 📝 Pendaftaran Kunjungan Rawat Jalan
