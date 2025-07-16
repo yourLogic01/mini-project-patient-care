@@ -13,9 +13,9 @@
                 <li class="nav-item {{ request()->routeIs('patients.*') ? 'active' : '' }}">
                     <a class="nav-link " href="{{ route('patients.index') }}">Patient</a>
                 </li>
-                <li class="nav-item  ">
+                <li class="nav-item  {{ request()->routeIs('visits.*') ? 'active' : '' }}">
                     {{-- {{ request()->routeIs('post') ? 'active' : '' }} --}}
-                    <a class="nav-link" href="#">Daftar Kunjungan</a>
+                    <a class="nav-link" href="{{ route('visits.create') }}">Daftar Kunjungan</a>
                 </li>
                 <li class="nav-item "><a class="nav-link" href="#">History</a>
                 </li>

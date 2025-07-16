@@ -5,20 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Patient extends Model
+class Visit extends Model
 {
     use HasFactory;
 
     protected $guarded = ['id'];
-    protected $casts = [
-        'birth_date' => 'date',
-    ];
+
 
     // Relations
-
-    public function visits()
+    public function patient()
     {
-        return $this->hasMany(Visit::class);
+        return $this->belongsTo(Patient::class);
     }
-
 }

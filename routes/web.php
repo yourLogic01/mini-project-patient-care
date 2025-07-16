@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PatientController;
+use App\Http\Controllers\VisitController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
-
+// route patients
 Route::resource('patients', PatientController::class)->except('show');
+
+// route daftar kunjungan
+Route::get('/visits/create', [VisitController::class, 'create'])->name('visits.create');
+Route::post('/visits', [VisitController::class, 'store'])->name('visits.store');
+
+
 
