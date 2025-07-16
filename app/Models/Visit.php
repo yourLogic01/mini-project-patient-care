@@ -11,6 +11,10 @@ class Visit extends Model
 
     protected $guarded = ['id'];
 
+    protected $casts = [
+        'visit_date' => 'date',
+    ];
+
 
     // Relations
     public function patient()

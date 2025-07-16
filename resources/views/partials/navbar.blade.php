@@ -17,7 +17,8 @@
                     {{-- {{ request()->routeIs('post') ? 'active' : '' }} --}}
                     <a class="nav-link" href="{{ route('visits.create') }}">Daftar Kunjungan</a>
                 </li>
-                <li class="nav-item "><a class="nav-link" href="#">History</a>
+                <li class="nav-item {{ request()->routeIs('histories.*') ? 'active' : '' }}"><a class="nav-link"
+                        href="{{ route('histories.index') }}">History</a>
                 </li>
         </div>
     </div>
