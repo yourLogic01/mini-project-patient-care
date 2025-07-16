@@ -11,7 +11,8 @@
         <div class="collapse navbar-collapse" id="navbarsService">
             <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
                 <li class="nav-item ">
-                    <a class="nav-link" href="#patient">Patient</a>
+                    <a class="nav-link {{ request()->routeIs('patients.index') ? 'active' : '' }}"
+                        href="{{ route('patients.index') }}">Patient</a>
                 </li>
                 <li class="nav-item  ">
                     {{-- {{ request()->routeIs('post') ? 'active' : '' }} --}}

@@ -22,7 +22,12 @@ class StorePatientRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|string|max:100',
+            'nik' => 'required|string|max:20|unique:patients,nik',
+            'gender' => 'required|in:L,P',
+            'birth_date' => 'required|date',
+            'phone' => 'required|string|max:15',
+            'address' => 'required|string',
         ];
     }
 }
