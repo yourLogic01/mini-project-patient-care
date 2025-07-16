@@ -26,7 +26,9 @@
                             {{-- NIK --}}
                             <div class="mb-3">
                                 <label for="nik" class="form-label">NIK</label>
-                                <input type="text" name="nik" class="form-control @error('nik') is-invalid @enderror"
+                                <input type="text" name="nik" inputmode="numeric" maxlength="16" pattern="\d{16}"
+                                    oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                                    class="form-control @error('nik') is-invalid @enderror"
                                     value="{{ old('nik', $patient->nik) }}" required>
                                 @error('nik')
                                     <div class="invalid-feedback">{{ $message }}</div>
@@ -67,7 +69,8 @@
                             {{-- Telepon --}}
                             <div class="mb-3">
                                 <label for="phone" class="form-label">Telepon</label>
-                                <input type="text" name="phone"
+                                <input type="text" name="phone" inputmode="numeric" maxlength="15" pattern="\d{10,15}"
+                                    oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                                     class="form-control @error('phone') is-invalid @enderror"
                                     value="{{ old('phone', $patient->phone) }}" required>
                                 @error('phone')
