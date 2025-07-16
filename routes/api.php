@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Api\HistoryController;
 use App\Http\Controllers\Api\PatientController;
+use App\Http\Controllers\Api\VisitController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -25,3 +27,11 @@ Route::get('/patients/{id}', [PatientController::class, 'show']);
 Route::post('/patients', [PatientController::class, 'store']);
 Route::put('/patients/{id}', [PatientController::class, 'update']);
 Route::delete('/patients/{id}', [PatientController::class, 'destroy']);
+
+// API for daftar kunjungan
+Route::post('/visits', [VisitController::class, 'store']);
+
+// API for riwayat kunjungan
+Route::get('/histories', [HistoryController::class, 'index']);
+Route::get('/histories/{visit}', [HistoryController::class, 'show']);
+Route::get('/histories/{id}/patient', [HistoryController::class, 'byPatient']);
