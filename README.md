@@ -87,6 +87,11 @@ Perubahan di Struktur `resources/views`:
         -   `create.blade.php`
     -   `home.blade.php`
 
+Struktur folder tambahan untuk documentation API
+
+-   📂 `docs`
+    -   `API-docs.md`
+
 ---
 
 ## Fitur yang Tersedia
