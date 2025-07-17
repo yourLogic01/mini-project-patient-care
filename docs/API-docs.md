@@ -45,6 +45,41 @@ GET /api/patients
 
 ---
 
+### 📄 GET /patients?search={name or nik} with query
+
+Menampilkan daftar pasien (paginated)
+
+**Request:**
+
+```
+GET /api/patients?search=bagas
+```
+
+**Response:**
+
+-   200 OK
+
+```json
+{
+    "current_page": 1,
+    "data": [
+        {
+            "id": 2,
+            "name": "bagas",
+            "nik": "3213052812010002",
+            "gender": "L",
+            "birth_date": "2000-01-16T00:00:00.000000Z",
+            "phone": "08996248476",
+            "address": "jl kuningan",
+            "created_at": "2025-07-16T11:30:53.000000Z",
+            "updated_at": "2025-07-16T11:31:03.000000Z"
+        }
+    ]
+}
+```
+
+---
+
 ### 📄 GET /patients/{id}
 
 Melihat detail 1 pasien berdasarkan ID

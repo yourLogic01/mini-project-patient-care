@@ -13,9 +13,17 @@ class PatientController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $patients = Patient::latest()->paginate(10);
+        $query = Patient::query();
+
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where('name', 'like', "%{$search}%")
+                ->orWhere('nik', 'like', "%{$search}%");
+        }
+
+        $patients = $query->orderBy('created_at', 'desc')->paginate(10);
         return response()->json(['data' => $patients], 200);
     }
 
