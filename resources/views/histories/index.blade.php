@@ -40,6 +40,7 @@
                                             <th>Poli</th>
                                             <th>Dokter</th>
                                             <th>Keluhan</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>

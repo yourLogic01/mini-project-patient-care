@@ -27,7 +27,9 @@ class UpdatePatientRequest extends FormRequest
             'nik' => [
                 'required',
                 'regex:/^\d{16}$/',
-                Rule::unique('patients', 'nik')->ignore($this->patient->id),
+                Rule::unique('patients', 'nik')->ignore(
+                    $this->route('patient') ?? $this->route('id')
+                ),
             ],
             'gender' => 'required|in:L,P',
             'birth_date' => 'required|date',
